@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fibonacci Serie</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="form-group col-xs-3">
+  	  <h4>Ingrese un numero </h4>
+      <input type="text" class="form-control" id="number">
+      <br>
+  	  <button type="button" class="btn btn-primary" id="next">Anterior</button>
+  	  <button type="button" class="btn btn-primary" id="prev">Siguiente</button>
+  </div>
+</div>
+<script>
+    var fibArray = [0,1];
+    fib = function(numMax){
+        for(i=0,j=1,k=0; k<numMax;i=j,j=x,k++ ){
+            x=i+j;
+            fibArray.push(x);
+        }
+    }
+</script>
+</body>
+</html>
