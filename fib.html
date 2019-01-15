@@ -15,18 +15,40 @@
   	  <h4>Ingrese un numero </h4>
       <input type="text" class="form-control" id="number">
       <br>
-  	  <button type="button" class="btn btn-primary" id="next">Anterior</button>
-  	  <button type="button" class="btn btn-primary" id="prev">Siguiente</button>
+  	  <button type="button" class="btn btn-primary" id="prev">Anterior</button>
+  	  <button type="button" class="btn btn-primary" id="next">Siguiente</button>
   </div>
 </div>
 <script>
-    var fibArray = [0,1];
-    fib = function(numMax){
-        for(i=0,j=1,k=0; k<numMax;i=j,j=x,k++ ){
-            x=i+j;
-            fibArray.push(x);
+
+    function fib(n){
+        let arr = [0, 1];
+        for (let i = 2; i < n + 1; i++){
+            arr.push(arr[i - 2] + arr[i -1])
         }
+        return arr[n]
     }
+
+    $("button").click(function() {
+        var num = parseInt($("#number").val());
+        var bid = this.id;
+        if (bid == "next") {
+            var next = num+1;
+            if (prev== undefined){
+                alert("Valor no encontrado");
+            } else {
+                alert(fib(next));
+            }
+        } else if (bid == "prev"){
+            var prev = num-1;
+            if (prev== undefined){
+                alert("Valor no encontrado");
+            } else {
+                alert(fib(prev));
+            }
+        }
+    });
+
 </script>
 </body>
 </html>
